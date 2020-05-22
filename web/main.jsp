@@ -42,7 +42,7 @@
             <input type="text" name="id" value="${user.id}">
           </td>
           <td>
-            <input type="text" name="name newName" value="${user.name}">
+            <input type="text" name="name" value="${user.name}">
           </td>
           <td>
             <input type="text" name="age" value="${user.age}">
@@ -57,15 +57,19 @@
           <button type="submit">delete</button>
         </form>
       </td>
-      <td>
+      <ul>
         <form action="/admin" method="post">
-          <input type="text" name="id" hidden value="${user.id}">
-          <input type="text" name="newName" hidden value="${user.name}">
-          <input type="text" name="age" hidden value="${user.age}">
-          <input type="text" name="pass" hidden value="${user.password}">
-          <button type="submit" value="update">update</button>
+          <li>
+        <input type="text" name="id" value="${user.id}"></li>
+          <li>
+        <input type="text" name="name" value="${user.name}"></li>
+          <li>
+        <input type="text" name="age" value="${user.age}"></li>
+          <li>
+        <input type="text" name="pass" value="${user.password}"></li>
+          <button type="submit">update</button>
         </form>
-      </td>
+      </ul>
       </tr>
     </c:forEach>
 

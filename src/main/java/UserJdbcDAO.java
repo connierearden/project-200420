@@ -64,9 +64,9 @@ public class UserJdbcDAO implements UserDAO {
         result.close();stmt.close();
         return user;
     }
-    public void updateUser (User user, String newName) throws SQLException {
+    public void updateUser (User user, String name) throws SQLException {
         PreparedStatement stmt = getMysqlConnection().prepareStatement("update user set name = ? where name = ? and password = ?");
-        stmt.setString(1, newName);
+        stmt.setString(1, name);
         stmt.setString(2, user.getName());
         stmt.setString(3, user.getPassword());
         stmt.executeUpdate();

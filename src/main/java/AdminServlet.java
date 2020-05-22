@@ -23,7 +23,7 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             User user = new UserJdbcDAO().getUserById(Long.parseLong(req.getParameter("id")));
-            new UserJdbcDAO().updateUser(user, req.getParameter("newName"));
+            new UserJdbcDAO().updateUser(user, req.getParameter("name"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
